@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    max-width: 100%;
+}
+header {
+    background-color: #001224;
+    padding: 10px;
+}
+header .justify-content-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+header .nav-link:hover {
+   
+    color: #19A2FF;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: none;
+    align-items: center;
+    height: auto;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+.form-container,
+.second-div {   
+    width: 40%; /* Adjust width as needed */
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+
+.form-container,
+.second-div {
+    /* Add your image path here */
+   background-color: white;
+   
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.second-div {
+    margin-left: 10px;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+select {
+    width: calc(100% - 22px); /* Adjust width as needed */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #19A2FF, #4B65FF);
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Adjust width as needed */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Button */
+::-webkit-scrollbar-button {
+    background: #ccc;
+    display: block;
+}
+
+span h2 {
+    color: #fff;
+    float: left;
+    margin-left: 10px;
+}
+span img {
+    float: left;
+}
+footer {
+    text-align: center;
+    color: #666;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+footer hr {
+    margin: 20px 40px;
+    border-color: #003366;
+}
+footer a {
+    color: #003366;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        
+        background-image: none; 
+    }
+    .form-container,
+    .second-div {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        
+    }
+}

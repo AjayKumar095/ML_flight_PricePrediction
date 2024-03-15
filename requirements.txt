@@ -1,0 +1,10 @@
+pandas
+numpy
+Flask
+Flask-Cors
+notebook
+matplotlib
+ensure  
+scikit-learn
+typing
+-e.

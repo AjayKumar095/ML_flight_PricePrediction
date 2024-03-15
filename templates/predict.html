@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='predict.css') }}">
+</head>
+<body>
+    <header>
+        <div class="justify-content-center">
+            <span>
+                <img src="static/image/hands_12293709.png" alt="logo" style="max-width: 50px;">
+                <h2>AeroPredict</h2>
+            </span>
+            <nav class="justify-content-center">
+                <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                <a class="nav-link" href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+<div class="container">
+    <div class="form-container">
+        <form action='\predict' method="post">
+            <h2>Predict Flight Price</h2>
+            <label for="journey_date">Date of Journey:</label>
+            <input type="datetime-local" id="journey_date" name="journey_date" required>
+
+            <label for="arrival_time">Arrival Time:</label>
+            <input type="datetime-local" id="arrival_time" name="arrival_time" required>
+
+            <label for="source">Source:</label>
+            <select id="source" name="source" required>
+                <option value="">Select Source</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="destination">Destination:</label>
+            <select id="destination" name="destination" required>
+                <option value="">Select Destination</option>
+                <option value="Cochin">Cochin</option>
+                <option value="Delhi">Delhi</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Kolkata">Kolkata</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="stop">Total Stop:</label>
+            <select id="stop" name="stop" required>
+                <option value="">Select Total Stops</option>
+                <option value="0">0 Stops</option>
+                <option value="1">1 Stop</option>
+                <option value="2">2 Stops</option>
+                <option value="3">3 Stops</option>
+                <option value="4">4 Stops</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="airline">Airline Company:</label>
+            <select id="airline" name="airline" required>
+                <option value="Jet Airways">Jet Airways</option>
+                <option value="IndiGo">IndiGo</option>
+                <option value="Air India">Air India</option>
+                <option value="Multiple carriers">Multiple carriers</option>
+                <option value="SpiceJet">SpiceJet</option>
+                <option value="Vistara">Vistara</option>
+                <option value="Air Asia">Air Asia</option>
+                <option value="GoAir">GoAir</option>
+                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
+                </option>
+                <option value="Jet Airways Business">Jet Airways Business</option>
+                <option value="Vistara Premium economy">Vistara Premium economy</option>
+                <option value="Trujet">Trujet</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <input type="submit" value="Get Price">
+        </form>
+    </div>
+
+    <div class="second-div">
+        <h2>Flight Details</h2>
+        <p><b>Date of joureny:       </b></p>
+        <p><b>Arrival Time:          </b></p>
+        <p><b>Source:                </b></p>
+        <p><b>Destination:           </b></p>
+        <p><b>Airline:               </b></p>
+        <p><b>Total Stop:            </b></p>
+        <hr>
+        <h3 style="color: #4B65FF">Estimated Price:        {{output}}</h3> 
+    </div>
+  
+</div>
+<footer class="footer">
+    <hr>
+    <p id="contact">Contact Us</p>
+    <a href="#"><b>GitHub</b></a>
+    <a href="#"><b>Linkedin</b></a>
+</footer>
+</body>
+</html>
