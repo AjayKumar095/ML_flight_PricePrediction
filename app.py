@@ -254,36 +254,36 @@ def predict():
 
         # Destination
         # Banglore = 0 (not in column)
-        Source = request.form["destination"]
-        if (Source == 'Cochin'):
+        destination = request.form["destination"]
+        if (destination == 'Cochin'):
             d_Cochin = 1
             d_Delhi = 0
             d_New_Delhi = 0
             d_Hyderabad = 0
             d_Kolkata = 0
         
-        elif (Source == 'Delhi'):
+        elif (destination == 'Delhi'):
             d_Cochin = 0
             d_Delhi = 1
             d_New_Delhi = 0
             d_Hyderabad = 0
             d_Kolkata = 0
 
-        elif (Source == 'New_Delhi'):
+        elif (destination == 'New_Delhi'):
             d_Cochin = 0
             d_Delhi = 0
             d_New_Delhi = 1
             d_Hyderabad = 0
             d_Kolkata = 0
 
-        elif (Source == 'Hyderabad'):
+        elif (destination == 'Hyderabad'):
             d_Cochin = 0
             d_Delhi = 0
             d_New_Delhi = 0
             d_Hyderabad = 1
             d_Kolkata = 0
 
-        elif (Source == 'Kolkata'):
+        elif (destination == 'Kolkata'):
             d_Cochin = 0
             d_Delhi = 0
             d_New_Delhi = 0
@@ -306,16 +306,7 @@ def predict():
         # )
         
 
-    #     ['Total_Stops', 'Journey_day', 'Journey_month', 'Dep_hour',
-    #    'Dep_min', 'Arrival_hour', 'Arrival_min', 'Duration_hours',
-    #    'Duration_mins', 'Airline_Air India', 'Airline_GoAir', 'Airline_IndiGo',
-    #    'Airline_Jet Airways', 'Airline_Jet Airways Business',
-    #    'Airline_Multiple carriers',
-    #    'Airline_Multiple carriers Premium economy', 'Airline_SpiceJet',
-    #    'Airline_Trujet', 'Airline_Vistara', 'Airline_Vistara Premium economy',
-    #    'Source_Chennai', 'Source_Delhi', 'Source_Kolkata', 'Source_Mumbai',
-    #    'Destination_Cochin', 'Destination_Delhi', 'Destination_Hyderabad',
-    #    'Destination_Kolkata', 'Destination_New Delhi']
+
         
         prediction=model.predict([[
             Total_stops,
@@ -347,9 +338,18 @@ def predict():
             d_New_Delhi
         ]])
 
-        output=int(round(prediction[0],2))
-        logs.info(f'price: {prediction}')
-        return render_template('predict.html', output=" Rs. {}".format(output))        
+        output=(round(prediction[0],2))
+        
+        price=" Rs. {}".format(output)
+        date=date_dep
+        arrival=date_arr
+        stops=Total_stops
+        source=Source
+        Airline=airline
+        desti=destination
+        return render_template('predict.html',
+                               price=price, Date=date, Arrival=arrival,
+                               Stops=stops, Src=source, Airline=Airline , Destination=desti)        
         
     
     else:
