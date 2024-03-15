@@ -87,12 +87,12 @@
 
     <div class="second-div">
         <h2>Flight Details</h2>
-        <p><b>Date of joureny:       </b></p>
-        <p><b>Arrival Time:          </b></p>
-        <p><b>Source:                </b></p>
-        <p><b>Destination:           </b></p>
-        <p><b>Airline:               </b></p>
-        <p><b>Total Stop:            </b></p>
+        <p><b>Date of journey:</b> <span id="displayDate"></span></p>
+        <p><b>Arrival Time:</b> <span id="displayArrivalTime"></span></p>
+        <p><b>Source:</b> <span id="displaySource"></span></p>
+        <p><b>Destination:</b> <span id="displayDestination"></span></p>
+        <p><b>Airline:</b> <span id="displayAirline"></span></p>
+        <p><b>Total Stops:</b> <span id="displayTotalStops"></span></p>
         <hr>
         <h3 style="color: #4B65FF">Estimated Price:        {{output}}</h3> 
     </div>
@@ -104,5 +104,23 @@
     <a href="#"><b>GitHub</b></a>
     <a href="#"><b>Linkedin</b></a>
 </footer>
+
+<script>
+    function displayFormData() {
+      var date = document.getElementById("journey_date").value;
+      var arrivalTime = document.getElementById("arrival_time").value;
+      var source = document.getElementById("source").value;
+      var destination = document.getElementById("destination").value;
+      var airline = document.getElementById("airline").value;
+      var totalStops = document.getElementById("stop").value;
+      
+      document.getElementById("displayDate").textContent = date;
+      document.getElementById("displayArrivalTime").textContent = arrivalTime;
+      document.getElementById("displaySource").textContent = source;
+      document.getElementById("displayDestination").textContent = destination;
+      document.getElementById("displayAirline").textContent = airline;
+      document.getElementById("displayTotalStops").textContent = totalStops;
+    }
+    </script>
 </body>
 </html>
