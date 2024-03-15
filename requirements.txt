@@ -7,4 +7,5 @@ matplotlib
 ensure  
 scikit-learn
 typing
+gunicorn
 -e.
